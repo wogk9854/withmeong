@@ -24,6 +24,17 @@ def home():
 @app.route('/board')
 def ho():
     return render_template('board/board.html')
+@app.route('/restaurant')
+def restaurant():
+    return render_template('with.html')
+@app.route('/cafe')
+def cafe():
+    return render_template('with2.html')
+@app.route('/pension')
+def pension():
+    return render_template('with3.html')
+
+
 
 
 @app.route('/write')
