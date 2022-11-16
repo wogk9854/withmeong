@@ -116,10 +116,10 @@
     </style>
     <script>
         $(document).ready(function () {
-            show_order();
+            board_list();
         });
 
-        function show_order() {
+        function board_list() {
             $.ajax({
                 type: 'GET',
                 url: '/board/list',
@@ -139,7 +139,6 @@
                                             <td><a href="" onclick="number(${num})">${title}</a></td>
                                             <td>${write}</td>
                                         </tr>`
-
                         $('#order-box').append(temp_html)
                     }
                 }

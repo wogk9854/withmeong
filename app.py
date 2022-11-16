@@ -42,6 +42,7 @@ def board_post():
 @app.route("/board/list", methods=["GET"])
 def board_road():
     board_list = list(db.board.find({}, {'_id': False}))
+    print(board_list)
     return jsonify({'board': board_list})
 
 
@@ -96,6 +97,40 @@ def board_delete():
     db.board.delete_one({'num':num1})
 
     return redirect(url_for("ho"))
+
+@app.route("/board/comment", methods=["POST"])
+def board_commnet():
+    comment = request.form['comment_give']
+    num = request.form['num_give']
+    print(comment)
+    print(num)
+    write = '재하11'
+    doc = {
+        'comment':comment,
+        'boardnum':num,
+        'write':write
+
+    }
+    db.comment.insert_one(doc)
+
+    return redirect(url_for("home"))
+
+
+@app.route("/get_comment", methods=["GET"])
+def get_comment():
+    print('댓글')
+    print(number)
+    print(type(number))
+
+    comment_list = list(db.comment.find({'boardnum': number}, {'_id': False}))
+
+
+
+    return jsonify({'comment_list': comment_list})
+
+
+
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)

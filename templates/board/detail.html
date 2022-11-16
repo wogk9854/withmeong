@@ -9,7 +9,10 @@
     <script>
         $(document).ready(function () {
             show_order();
+            comment_list();
+
         });
+
 
         function show_order() {
             $.ajax({
@@ -26,7 +29,7 @@
                     let num = response['num']
                     let img = response['img']
                     console.log(title)
-                    let temp_html = ` <div class="detail_img">
+                    let temp_html = `<div class="detail_img">
                                           <img src="/static/${img}">
                                       </div>
                                       <div class="board_info">
@@ -35,12 +38,28 @@
                                         글번호 : ${num}  &nbsp;&nbsp;&nbsp;&nbsp;작성자 : ${write}
                                         </div><br>
                                         글내용 :${content}<br>
+                                        <input type="hidden" id="numtest" class="numtest" value="${num}">
 
                                       </div>
                                         <button class="list-btn"><a href="/">글목록</a></button>
                                         <button class="delete-btn" type="button" onclick="number(${num})">게시글삭제</button>`
                     $('#detail-box').append(temp_html)
 
+                }
+            });
+        }
+
+        function save_comment() {
+            let comment = $('#comment').val();
+            let num = $('#numtest').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/board/comment',
+                data: {comment_give: comment, num_give: num},
+                success: function (response) {
+                    alert("댓글작성")
+                    location.replace("/")
                 }
             });
         }
@@ -57,15 +76,43 @@
             });
         }
 
+        function comment_list() {
+            $.ajax({
+                type: 'GET',
+                url: '/get_comment',
+                data: {},
+                success: function (response) {
+                    let rows = response['comment_list']
+
+                    for (let i = 0; i < rows.length; i++) {
+                        let comment = rows[i]['comment']
+                        let boardnum = rows[i]['boardnum']
+                        let write = rows[i]['write']
+
+                        let temp_html = `<div class="comment_list">
+                                            <div class="comment_write">
+                                                ${write}
+                                            </div>
+                                            &nbsp; ${comment}
+                                        </div>`
+                        $('#comment-load').append(temp_html)
+                    }
+                }
+            });
+        }
+
+
     </script>
     <style>
         * {
             font-family: 'Jua', sans-serif;
         }
-         a {
+
+        a {
             text-decoration: none;
             color: black;
         }
+
         .header {
             border: 3px solid red;
             height: 300px;
@@ -185,6 +232,54 @@
             font-size: 1.1em;
             margin-left: 660px;
         }
+
+        .comment {
+            border-top: 3px solid black;
+            text-align: left;
+            margin: 0 auto;
+            width: 1000px;
+            height: 300px;
+        }
+
+        .comment_post {
+            margin: 0 auto;
+            width: 1000px;
+            height: 150px;
+        }
+
+        .comment_post textarea {
+            width: 70%;
+            height: 7em;
+            font-size: 1.2em;
+            margin-left: 50px;
+            resize: none;
+        }
+
+        .comment_btn {
+            font-weight: bold;
+            display: inline-block;
+            background-color: white;
+            border-radius: 50px;
+            width: 95px;
+            height: 45px;
+            margin-top: 90px;
+            position: absolute;
+            font-size: 1.1em;
+            margin-left: 20px;
+
+        }
+
+        .comment_write {
+
+            padding-top: 15px;
+            margin-bottom: 3px;
+        }
+
+        .comment_list {
+            margin-left: 45px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -200,6 +295,17 @@
 <div class="detail-box" id="detail-box">
 
 </div>
+<div class="comment" id="comment-load">
+
+
+
+</div>
+<div class="comment_post">
+    <textarea placeholder="댓글작성" type="text" id="comment"></textarea>
+    <button class="comment_btn" type="button" onclick="save_comment()">작성</button>
+
+</div>
+
 
 <div class="sec5">
     <div class="under-bar">
@@ -210,7 +316,6 @@
         </div>
     </div>
 </div>
-s
 
 
 </body>
