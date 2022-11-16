@@ -93,7 +93,35 @@ def board_delete():
 
     return redirect(url_for("home"))
 
+@app.route("/board/comment", methods=["POST"])
+def board_commnet():
+    comment = request.form['comment_give']
+    num = request.form['num_give']
+    print(comment)
+    print(num)
+    doc = {
+        'comment':comment,
+        'boardnum':num
+    }
+    db.comment.insert_one(doc)
 
+    return redirect(url_for("home"))
+
+@app.route("/get_comment", methods=["GET"])
+def get_comment():
+    print('댓글')
+    print(number)
+    print(type(number))
+    abc = int(number)
+    print(type(abc))
+    comment_list = db.comment.find_one({'num': abc})
+    print(comment_list)
+    comment = comment_list['comment']
+    num = comment_list['num']
+    write = '재하11'
+    print(comment)
+    print(number)
+    return jsonify({'comment': comment, 'write': write, 'boardnum': num})
 
 
 
