@@ -37,6 +37,7 @@ def pension():
 
 
 
+
 @app.route('/write')
 def main():
     return render_template('board/write.html')

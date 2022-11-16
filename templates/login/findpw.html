@@ -37,6 +37,7 @@
                     success: function (response) {
                         console.log(response)
                         if (response['result'] == 'success') {
+                            console.log('abc')
                             $('#login_box').hide()
                             $('#repw_box').show()
                             user_email = response['user_id']
@@ -160,7 +161,7 @@
                 display: none;
             }
             .repw_box {
-                display: none;
+                /*display: none;*/
             }
 
 
@@ -180,7 +181,7 @@
             </div>
         </div>
         <hr>
-        <div class="login_box">
+        <div class="login_box" id="login_box">
             <h1>비밀번호 찾기</h1>
             <div class="form-floating mb-3">
                 <input type="email" autofocus class="form-control" id="find_email" placeholder="name@example.com">
