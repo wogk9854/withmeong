@@ -38,6 +38,7 @@ def board_post():
 @app.route("/board/list", methods=["GET"])
 def board_road():
     board_list = list(db.board.find({}, {'_id': False}))
+    print(board_list)
     return jsonify({'board': board_list})
 
 
@@ -99,29 +100,31 @@ def board_commnet():
     num = request.form['num_give']
     print(comment)
     print(num)
+    write = '재하11'
     doc = {
         'comment':comment,
-        'boardnum':num
+        'boardnum':num,
+        'write':write
+
     }
     db.comment.insert_one(doc)
 
     return redirect(url_for("home"))
+
 
 @app.route("/get_comment", methods=["GET"])
 def get_comment():
     print('댓글')
     print(number)
     print(type(number))
-    abc = int(number)
-    print(type(abc))
-    comment_list = db.comment.find_one({'num': abc})
-    print(comment_list)
-    comment = comment_list['comment']
-    num = comment_list['num']
-    write = '재하11'
-    print(comment)
-    print(number)
-    return jsonify({'comment': comment, 'write': write, 'boardnum': num})
+
+    comment_list = list(db.comment.find({'boardnum': number}, {'_id': False}))
+
+
+
+    return jsonify({'comment_list': comment_list})
+
+
 
 
 

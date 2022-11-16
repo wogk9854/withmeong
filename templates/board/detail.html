@@ -9,6 +9,7 @@
     <script>
         $(document).ready(function () {
             show_order();
+            comment_list();
 
         });
 
@@ -83,19 +84,18 @@
                 success: function (response) {
                     let rows = response['comment_list']
 
-                    console.log(response)
-
                     for (let i = 0; i < rows.length; i++) {
-                        let num = rows[i]['num']
-                        let title = rows[i]['title']
+                        let comment = rows[i]['comment']
+                        let boardnum = rows[i]['boardnum']
                         let write = rows[i]['write']
-                        let content = rows[i]['content']
-                        let temp_html = `<tr>
-                                            <th scope="row">${num}</th>
-                                            <td><a href="" onclick="number(${num})">${title}</a></td>
-                                            <td>${write}</td>
-                                        </tr>`
-                        $('#order-box').append(temp_html)
+
+                        let temp_html = `<div class="comment_list">
+                                            <div class="comment_write">
+                                                ${write}
+                                            </div>
+                                            &nbsp; ${comment}
+                                        </div>`
+                        $('#comment-load').append(temp_html)
                     }
                 }
             });
@@ -295,20 +295,9 @@
 <div class="detail-box" id="detail-box">
 
 </div>
-<div class="comment">
-    <div class="comment_list">
-        <div class="comment_write">
-            재하
-        </div>
-        &nbsp; 댓글테스트
-    </div>
+<div class="comment" id="comment-load">
 
-    <div class="comment_list">
-        <div class="comment_write">
-            재하
-        </div>
-        &nbsp; test
-    </div>
+
 
 </div>
 <div class="comment_post">
