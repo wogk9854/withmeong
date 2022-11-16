@@ -197,7 +197,8 @@ def api_find_id():
         user = db.withmeong.find_one({'nick': findid_nick_receive, 'pw': findid_pw_hash})
         user_id = user['id']
         print(user_id)
-        return jsonify({'result': 'success'}, {'result_id': user_id})
+        return jsonify({'result': 'success', 'result_id': user_id})
+                       # , {'result_id': user_id})
     else:
         return jsonify({'result': 'fail'})
 
@@ -206,24 +207,26 @@ def api_find_pw():
     findpw_email_receive = request.form['findpw_email_give']
     findpw_nick_receive = request.form['findpw_nick_give']
 
-    if db.withmeong.find.one({'id': findpw_email_receive, 'nick': findpw_nick_receive}):
+    print(findpw_email_receive, findpw_nick_receive)
+    if db.withmeong.find_one({'id': findpw_email_receive, 'nick': findpw_nick_receive}):
         user = db.withmeong.find_one({'id': findpw_email_receive, 'nick': findpw_nick_receive})
         user_id = user['id']
-        return jsonify({'result': 'success'}, {'result_id': user_id})
+        return jsonify({'result': 'success', 'result_id': user_id})
     else:
         print('fail')
         return jsonify({'msg':'msg'})
 
-# @app.route('/api/repw', methods=['POST'])
-# def api_re_pw():
-#     re_email = request.form['re_email_give']
-#     re_pw = request.form['re_email.give']
-#
-#     repw_hash =  hashlib.sha256(re_pw.encode('utf-8')).hexdigest()
-#
-#     db.withmeong.update_one({'id': re_email}, {'$set': {'pw': repw_hash}})
-#
-#     return jsonify({'result': 'success'})
+@app.route('/api/repw', methods=['POST'])
+def api_re_pw():
+    re_email = request.form['re_email_give']
+    re_pw = request.form['re_email.give']
+
+    print(re_email, re_pw)
+    repw_hash = hashlib.sha256(re_pw.encode('utf-8')).hexdigest()
+
+    db.withmeong.update_one({'id': re_email}, {'$set': {'pw': repw_hash}})
+
+    return jsonify({'result': 'success'})
 
 @app.route('/api/login', methods=['POST'])
 def api_login():
@@ -272,4 +275,4 @@ def api_valid():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=4000, debug=True)
