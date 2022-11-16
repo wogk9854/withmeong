@@ -1,47 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-              integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-              crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
-    <title>위드멍!</title>
+    <title>위드멍::반려동물 동반#숙소</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap" rel="stylesheet">
+
     <style>
         * {
             font-family: 'Jua', sans-serif;
         }
+
         .mytitle {
             color: #5f85e5;
-
-            height: 80px;
+            height: 100px;
             width: auto;
-
+            margin: auto;
+            padding-top: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
-            text-decoration-line: underline;
-            text-decoration-thickness: 2px;
-
         }
+
         .mylog {
             margin: 0px 0px 10px 1100px;
         }
+
         .log-btn {
             width: 100px;
             border-radius: 50px;
             background-color: transparent;
             cursor: pointer
         }
+
         .join-btn {
             width: 100px;
             margin-top: 3px;
@@ -49,199 +51,223 @@
             background-color: transparent;
             cursor: pointer;
         }
+
         .join-btn:hover {
             color: #31c0ff;
             border: 2px solid #31c0ff;
         }
 
-        .log-btn {
-            width: 100px;
-            border-radius: 50px;
-            background-color: transparent;
-            cursor: pointer;
+        .log-btn:hover {
+            color: #31c0ff;
+            border: 2px solid #31c0ff;
         }
+
         .myimg {
-
-            height: 250px;
-            max-width: 1200px;
-            width: 95%;
-
-            background-image: url("https://media.istockphoto.com/id/1014843332/ko/%EB%B2%A1%ED%84%B0/%EA%B3%A0%EC%96%91%EC%9D%B4-%EB%98%90%EB%8A%94-%EA%B0%9C-%EB%B0%9C-%EC%99%84%EB%B2%BD-%ED%95%9C-%ED%8C%A8%ED%84%B4-%EC%95%A0%EC%99%84-%EB%8F%99%EB%AC%BC%EA%B0%80-%EA%B2%8C-%EC%9B%B9-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%B0%8F-%EC%9D%B8%EC%87%84%EC%97%90-%EB%8C%80-%ED%95%9C-%EB%B0%B0%EA%B2%BD%EC%9E%85%EB%8B%88%EB%8B%A4-%EB%8F%99%EB%AC%BC-%EB%B0%9C%EC%9E%90%EA%B5%AD.jpg?s=612x612&w=0&k=20&c=lWzzTq24EZh_ibHBz7oV7ec0IlIksKwHt_WLWysvmI8=");
-            background-position: center;
-            background-size: 630px;
-            background-color: rgba(30, 47, 248, 0.99);
-
-            margin: 0px auto 0px auto;
-
-            border-radius: 10px;
-
+            width: 100%;
+            height: 320px;
+            background-size: cover;
+            background: url('https://images.unsplash.com/photo-1554456854-55a089fd4cb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') center center;
+        / 100 % no-repeat;
         }
+
         .myca {
             max-height: 1000px;
             height: 95%;
-
             margin: 100px 250px 0px 250px;
-            }
-
-
+        }
 
         .myloc {
             color: #5f85e5;
             margin-left: 250px;
-
             font-family: 'Gowun Dodum', sans-serif;
         }
-        .card{
+
+        .card {
             min-height: 200px;
-
             border: 2px solid black;
+            width: 100%;
+            height: 500px;
         }
-        .myteam {
-            padding-top: 40px;
 
-            background-color: #f0f0f8;
-            margin-top: 10px;
-        }
-        .myteam > h8 {
-            margin: auto 0px 10px 20px;
-
-        }
-        .mybtn {
+        .inbtn {
             background-color: transparent;
             color: black;
             border: 1px solid black;
             border-radius: 10px;
             font-size: 18px;
-            margin-left: 100px
+            margin: auto;
+            cursor: pointer;
         }
-        .mybtn > button:hover {
+
+        .inbtn:hover {
             border: 2px solid black;
         }
 
-    </style>
+        .myteam {
+            padding-top: 40px;
+        }
 
+        .myteam > h5 {
+            margin: auto 0px 10px 20px;
+            font-size: 12px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-weight: lighter;
+        }
+
+        .carousel-control-next {
+            margin-right: -100px;
+        }
+
+        .carousel-control-prev {
+            margin-left: -100px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 6vh;
+            height: 6vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-indicators {
+            margin-bottom: -20px;
+        }
+    </style>
     <script>
 
     </script>
 </head>
-
 <body>
-    <div class = "mytitle" onclick=location.href='메인페이지'>
-        <h1> 위드멍 </h1>
-    </div>
-    <div class="mylog">
-        <button class="log-btn" onclick=location.href='로그인페이지'>로그인</button>
-        <button class="join-btn" onclick=location.href='회원가입페이지'>회원가입</button>
-    </div>
-    <div class = "myimg">
-
-    </div>
-    <div class="myloc">
-        <h8>메인페이지 > #숙소</h8>
-    </div>
-
-
+<div class="mytitle" onclick=location.href='메인페이지'>
+    <h1><img src="https://cdn.discordapp.com/attachments/1036843116294053911/1042336647490043935/f617b6aac5a7248d.png">
+    </h1>
+</div>
+<div class="mylog">
+    <button class="log-btn" onclick=location.href='로그인페이지'>로그인</button>
+    <button class="join-btn" onclick=location.href='회원가입페이지'>회원가입</button>
+</div>
+<div class="myimg">
+</div>
+<div class="myloc">
+    <h8>메인페이지 > #숙소</h8>
+</div>
+<section>
     <div class="myca">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide1"></button>
+                <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide2"></button>
+                <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide3"></button>
             </div>
             <div class="pics">
                 <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAyMTRfMjE1%2FMDAxNjQ0ODIwNDkwODU4.6FuGM0Xm5dU4W2Lr9DnZ4BiIvznVv_pguVKYQ3wIO-Mg.lkAjJRrEUQ7XOgib93maHHPUXMvfXcqCD_dTJb6ex7og.JPEG.brandiolab%2F19978445.jpg&type=a340"
-                                 class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">고우다</h5>
-                                    <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
-                                        힐링하기 좋은 곳이네요!</p>
-                                    <button class="mybtn">들어가기</button>
+                    <div class="carousel-item active">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://ldb-phinf.pstatic.net/20210429_252/1619703468108SxbAy_JPEG/HugSOqTjprj8hYM3ur59D22V.jpg"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(김천) 오색애견펜션</h5>
+                                        <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
+                                            힐링하기 좋은 곳이네요!</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/leeye1985/222898307776'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://ldb-phinf.pstatic.net/20221027_204/1666850086792Trz6q_JPEG/1.jpg"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(가평) 체리몽 애견 풀빌라</h5>
+                                        <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
+                                            힐링하기 좋은 곳이네요!</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/nailstan/222922898800'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://ldb-phinf.pstatic.net/20211112_37/1636705762499SXaWO_JPEG/13131313.jpg"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(태안) 나로 글램핑&캠핑장</h5>
+                                        <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
+                                            힐링하기 좋은 곳이네요!</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/oocc333/222910058097'>들어가기
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzExMTdfNDkg%2FMDAxNTEwOTA1NjIzMjQx.nmnnyHUT7FwICm1MOyVw1G_8YuRKesXdehKiDgkk-m8g.cxlbUTtTtRqSBkTU-AeqUQ5t3-khibMdk5NBTVyOwcQg.JPEG.mj9480%2F20171117_093522.jpg&type=ofullfill340_600_png"
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">고우다</h5>
-                                    <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
-                                        힐링하기 좋은 곳이네요!</p>
-                                    <button class="mybtn">들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTdfMjgw%2FMDAxNjY1OTkzOTQ0NDA1.frMfq5GZyf_ToIWkF1lIh3DsIpPefsXBsvlkP8rvAeQg.EkU-bfHI9O9PaIoTK4GnBtDRT8mw0ir5YqQFXUj3KwAg.JPEG.crystal129%2Foutput_2483756617.jpg&type=sc960_832"
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">고우다</h5>
-                                    <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
-                                        힐링하기 좋은 곳이네요!</p>
-                                    <button class="mybtn">들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                </div>
-                <div class="carousel-item">
-
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTdfMjgw%2FMDAxNjY1OTkzOTQ0NDA1.frMfq5GZyf_ToIWkF1lIh3DsIpPefsXBsvlkP8rvAeQg.EkU-bfHI9O9PaIoTK4GnBtDRT8mw0ir5YqQFXUj3KwAg.JPEG.crystal129%2Foutput_2483756617.jpg&type=sc960_832"
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">아고다</h5>
-                                    <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
-                                        힐링하기 좋은 곳이네요</p>
-                                    <button class="mybtn">들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTdfMjgw%2FMDAxNjY1OTkzOTQ0NDA1.frMfq5GZyf_ToIWkF1lIh3DsIpPefsXBsvlkP8rvAeQg.EkU-bfHI9O9PaIoTK4GnBtDRT8mw0ir5YqQFXUj3KwAg.JPEG.crystal129%2Foutput_2483756617.jpg&type=sc960_832"
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">아고다</h5>
-                                    <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
-                                        힐링하기 좋은 곳이네요</p>
-                                    <button class="mybtn">들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTdfMjgw%2FMDAxNjY1OTkzOTQ0NDA1.frMfq5GZyf_ToIWkF1lIh3DsIpPefsXBsvlkP8rvAeQg.EkU-bfHI9O9PaIoTK4GnBtDRT8mw0ir5YqQFXUj3KwAg.JPEG.crystal129%2Foutput_2483756617.jpg&type=sc960_832"
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">아고다</h5>
-                                    <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
-                                        힐링하기 좋은 곳이네요</p>
-                                    <button class="mybtn">들어가기</button>
-                                </div>
-                            </div>
+                        <div class="carousel-caption d-none d-md-block">
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://ldb-phinf.pstatic.net/20220329_36/1648530469075moTAq_JPEG/%B2%D9%B9%CC%B1%E2DSC_0527.jpg"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(부산) 영무 파라드 호텔</h5>
+                                        <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
+                                            힐링하기 좋은 곳이네요</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/keroann/222869244074'>들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20201214_1%2F1607915692013Dc4tk_JPEG%2Fimage.jpg"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(제주) 호나</h5>
+                                        <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
+                                            힐링하기 좋은 곳이네요</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/alsrud7770/222904924887'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://pup-review-phinf.pstatic.net/MjAyMjA5MjNfMjM0/MDAxNjYzOTAzNTQ4NDcy.Kg-7s0tBq-DHymgWD3AZ3dwf0bi6E7rzygAVfpPnbN4g.xVgOXnFQyt1C9OOuryeNBpb_WSfKu4RNkndUSUhXshcg.JPEG/20220922_093854.jpg"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(청도) 더 포레 풀빌라</h5>
+                                        <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
+                                            힐링하기 좋은 곳이네요</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/soulfulog/222907075861'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
                     </div>
-                </div>
 
                 </div>
             </div>
@@ -258,16 +284,18 @@
             </button>
         </div>
     </div>
-
-    <div class="myteam">
-        <p><h8>제작자/ 최재하, 김세연. 이상정, 허정은</h8></p>
-        <p><h8>소속팀/ 항해99 10기 C반 7조</h8></p>
-        <p><h8>제작의의/ 반려동물과 함께 갈 수 있는 반려동물 동반장소에 대해 후기 및 정보들을 나누며 소통하기 위해 제작된 프로젝트입니다:)</h8></p>
-    </div>
-
-
-
-
+</section>
+<div class="myteam">
+    <p>
+    <h5>제작자/ 최재하, 김세연. 이상정, 허정은</h5>
+    </p>
+    <p>
+    <h5>소속팀/ 항해99 10기 C반 7조</h5>
+    </p>
+    <p>
+    <h5>제작의의/ 반려동물과 함께 갈 수 있는 반려동물 동반장소에 대해 후기 및 정보들을 나누며 소통하기 위해 제작된 프로젝트입니다:)</h5>
+    </p>
+</div>
 
 
 </body>
