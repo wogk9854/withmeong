@@ -6,9 +6,12 @@ from pymongo import MongoClient
 client = MongoClient('mongodb+srv://test:sparta@cluster0.s7gsuon.mongodb.net/Cluster0?retryWrites=true&w=majority')
 db = client.dbsparta
 
-
 @app.route('/')
 def home():
+   return render_template('index.html')
+
+@app.route('/')
+def ho():
     return render_template('board/board.html')
 
 
