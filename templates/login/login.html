@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Webpage Title -->
+    <title>Hello, world!</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+
+
+    <script>
+        {% if msg %}
+            alert("{{ msg }}")
+        {% endif %}
+        function login() {
+            $.ajax({
+                type: "POST",
+                url: "/api/login",
+                data: {id_give: $('#login_id').val(), pw_give: $('#login_pw').val()},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        // $.cookie('mytoken', response['token']);
+                        document.cookie = encodeURIComponent('mytoken') + '=' + encodeURIComponent(response['token']);
+                        alert('로그인 완료!')
+                        window.location.href = '/'
+                    } else {
+                        // 로그인이 안되면 에러메시지를 띄웁니다.
+                        alert(response['msg'])
+                    }
+                }
+            })
+        }
+
+
+    </script>
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 97%;
+            background-color: #F7F6F6;
+            display: flex;
+            overflow: auto;
+
+        }
+
+        .logo {
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            margin: auto 20px auto auto;
+        }
+
+        .logoimage {
+            width: 95%;
+            height: 50%;
+            margin: auto;
+            margin-top: 2.5%;
+            background-color: aqua;
+            background-image: url("https://cdn.pixabay.com/photo/2012/12/24/08/40/dog-72333_1280.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login_page_title {
+            margin: 10px auto 10px auto;
+            text-align: center;
+        }
+
+        .login_page_text {
+            width: 90%;
+            margin: auto;
+
+        }
+        .login_box {
+            width: 400px;
+            background-color: white;
+            box-shadow: 0px 0px 3px 0px gray;
+            margin: auto auto auto 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .check_box {
+            margin: 0px auto 0px 0px;
+        }
+
+        .login_box > btn {
+            margin-top: 20px;
+        }
+
+        .input-wrap:hover {
+            font-weight: bold;
+        }
+
+        .login_box_in > button:hover {
+            font-weight: bold;
+        }
+
+        .find_box > li:hover {
+            font-weight: bold;
+        }
+
+        .login_box > button:hover {
+            font-weight: bold;
+        }
+
+        .d-grid gap-2 > button:hover {
+            border: 2px solid black;
+        }
+
+        .login_box_bottom {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <div class="logo">
+        <div class="logoimage">로고 이미지에 홈으로가는 url이 들어갑니다</div>
+        <div class="login_page_title">
+            <h1>위드멍은</h1>
+            <div class="login_page_text">여러분들의 소중한 반려견들과 함께 갈 수 있는곳들을 손쉽게 찾아볼 수 있게 만든 웹 사이트입니다. 항상 여러분들 곁을 지켜주는 친구들을
+                위해
+                다닐 수 있는곳을 찾아주세요!!
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="login_box">
+        <h1>로그인하기</h1>
+        <div class="form-floating mb-3">
+            <input type="email" autofocus class="form-control" id="login_id" placeholder="name@example.com">
+            <label>이메일을 입력하세요</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="login_pw" placeholder="Password">
+            <label>패스워드를 입력하세요</label>
+            <div class="check_box">
+                  <span class="input-wrap">
+                    <input type="checkbox" id="checkId" name="checkId">
+                    <label for="checkId">아이디 저장</label>
+                  </span>
+            </div>
+        </div>
+        <hr>
+        <div class="d-grid gap-2">
+            <button onclick="login()" class="btn btn-light" type="button">놀러가기</button>
+        </div>
+
+        <hr>
+        <div class="login_box_bottom">
+            <a href="http://localhost:4000/findid">아이디 찾기</a> | <a href="http://localhost:4000/findpw">비밀번호 찾기</a> | <a
+                href="http://localhost:4000/register">회원가입</a>
+
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
