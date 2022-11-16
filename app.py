@@ -198,7 +198,6 @@ def api_find_id():
         user_id = user['id']
         print(user_id)
         return jsonify({'result': 'success', 'result_id': user_id})
-                       # , {'result_id': user_id})
     else:
         return jsonify({'result': 'fail'})
 
