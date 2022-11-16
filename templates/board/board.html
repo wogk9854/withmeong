@@ -122,7 +122,7 @@
         function board_list() {
             $.ajax({
                 type: 'GET',
-                url: '/board',
+                url: '/board/list',
                 data: {},
                 success: function (response) {
                     let rows = response['board']

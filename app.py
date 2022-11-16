@@ -35,7 +35,7 @@ def board_post():
     return jsonify({'msg': '작성완료'})
 
 
-@app.route("/board", methods=["GET"])
+@app.route("/board/list", methods=["GET"])
 def board_road():
     board_list = list(db.board.find({}, {'_id': False}))
     return jsonify({'board': board_list})
