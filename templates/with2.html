@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-      <meta charset="utf-8">
+    <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -11,39 +11,37 @@
               integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
               crossorigin="anonymous"></script>
 
-    <title>위드멍!</title>
+    <title>위드멍::반려동물 동반#식당</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap" rel="stylesheet">
+     <style>
         * {
             font-family: 'Jua', sans-serif;
         }
+
         .mytitle {
-
-            height: 102px;
-            width: 240px;
-            margin: 0px 0px 30px 650px;
-
+            color: #5f85e5;
+            height: 100px;
+            width: auto;
+            margin: auto;
+            padding-top: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
-            text-decoration-line: underline;
-            text-decoration-thickness: 2px;
-
-            background-image: url("https://cdn.discordapp.com/attachments/1036843116294053911/1042336647490043935/f617b6aac5a7248d.png");
-
         }
         .mylog {
             margin: 0px 0px 10px 1100px;
         }
+
         .log-btn {
             width: 100px;
             border-radius: 50px;
             background-color: transparent;
             cursor: pointer
         }
+
         .join-btn {
             width: 100px;
             margin-top: 3px;
@@ -51,76 +49,94 @@
             background-color: transparent;
             cursor: pointer;
         }
+
         .join-btn:hover {
             color: #31c0ff;
             border: 2px solid #31c0ff;
         }
 
-        .log-btn {
-            width: 100px;
-            border-radius: 50px;
-            background-color: transparent;
-            cursor: pointer;
+        .log-btn:hover {
+            color: #31c0ff;
+            border: 2px solid #31c0ff;
         }
+
         .myimg {
-
-            height: 250px;
-            max-width: 1200px;
-            width: 95%;
-
-            background-image: url("https://media.istockphoto.com/id/489766886/ko/%EB%B2%A1%ED%84%B0/%EC%84%B8%ED%8A%B8%EB%A7%88%EB%8B%A4-%ED%8F%89%ED%8E%B8-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9D-%EC%A6%89%EC%84%9D%EC%8B%9D-%EC%95%84%EC%9D%B4%EC%BD%98.jpg?s=612x612&w=0&k=20&c=w_g_rtVdybkLv74h3r_d-C8QxkSPG5EA9WmaxLDSIYY=");
-            background-position: center;
-            background-size: 400px;
-            background-color: rgba(30, 47, 248, 0.99);
-
-            margin: 0px auto 0px auto;
-
-            border-radius: 10px;
-
+            width: 100%;
+            height: 320px;
+            background-size: cover;
+            background: url('https://media.istockphoto.com/id/1125615731/ko/%EB%B2%A1%ED%84%B0/%EB%B2%A1%ED%84%B0-%EB%82%99%EC%84%9C-%EC%8A%A4%EB%AC%B4%EB%94%94-%ED%8C%A8%ED%84%B4-%EB%98%90%EB%8A%94-%EB%B0%B0%EA%B2%BD-%EA%B7%B8%EB%A6%BC.jpg?s=612x612&w=0&k=20&c=BNmZ8-uoCvutCUKvvNiwNCHTIN91-UYy73Dhg3TPh68=') center center;
+        / 100 % no-repeat;
         }
+
         .myca {
             max-height: 1000px;
             height: 95%;
-
             margin: 100px 250px 0px 250px;
-            }
-
-
+        }
 
         .myloc {
             color: #5f85e5;
             margin-left: 250px;
-
             font-family: 'Gowun Dodum', sans-serif;
         }
-        .card{
+
+        .card {
             min-height: 200px;
-
             border: 2px solid black;
+            width: 100%;
+            height: 500px;
         }
-        .myteam {
-            padding-top: 40px;
 
-            background-color: #f0f0f8;
-            margin-top: 10px;
-        }
-        .myteam > h8 {
-            margin: auto 0px 10px 20px;
-
-        }
-        .mybtn {
+        .inbtn {
             background-color: transparent;
             color: black;
             border: 1px solid black;
             border-radius: 10px;
             font-size: 18px;
-            margin-left: 100px
+            margin: 20px 60px 60px 105px;
+            cursor: pointer;
         }
-        .mybtn > button:hover {
+
+        .inbtn:hover {
             border: 2px solid black;
         }
 
+        .myteam {
+            background-color: #f0f0f8;
+            padding-top: 40px;
+        }
 
+        .myteam > h5 {
+            margin: auto 0px 10px 20px;
+            font-size: 12px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-weight: lighter;
+        }
+
+        .carousel-control-next {
+            margin-right: -100px;
+        }
+
+        .carousel-control-prev {
+            margin-left: -100px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 6vh;
+            height: 6vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-indicators {
+            margin-bottom: -20px;
+        }
+        .allback {
+            background-color: #f5f5f5;
+        }
     </style>
 
     <script>
@@ -129,10 +145,12 @@
 </head>
 
 <body>
-<div class="myback">
-    <div class = "mytitle" onclick=location.href='메인페이지'>
-       
+<div class="allback">
+        <div class="mytitle" onclick=location.href='메인페이지'>
+    <h1><img src="https://cdn.discordapp.com/attachments/1036843116294053911/1042336647490043935/f617b6aac5a7248d.png">
+    </h1>
     </div>
+
     <div class="mylog">
         <button class="log-btn" onclick=location.href='로그인페이지'>로그인</button>
         <button class="join-btn" onclick=location.href='회원가입페이지'>회원가입</button>
@@ -148,13 +166,12 @@
     <div class="myca">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide1"></button>
+                <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide2"></button>
+                <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide3"></button>
             </div>
             <div class="pics">
                 <div class="carousel-inner">
@@ -162,12 +179,12 @@
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
                             <div class="card">
-                                <img src="https://postfiles.pstatic.net/MjAyMjA4MjdfNzcg/MDAxNjYxNjA1NTQxNjQw.ifl9BPn0BcPT8Lo03jGqKC2kVA4JrpzQN2oG3rqAXQ0g.uDx6rgQbP0-oq6avHtlZvprPPY0W5-4N67NA0c5GVXYg.JPEG.ddarumom/IMG_1767.jpg?type=w773"
+                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MDlfMTE4%2FMDAxNjUyMDc1MzQ4NTA4.jfgC1n6KvDFhKRcqLu-4V4EBJokFQl_Z1_042jVb2bUg.XXtec8jT4JU0jOiseuD4FkA5rtOs2aCBIILbZHEX3-Mg.JPEG.rmiae5%2Foutput_320868304.jpg&type=a340"
                                  class="card-img-top" alt="..." style="height: 250px">
                                 <div class="card-body">
-                                    <h5 class="card-title">로그하우스</h5>
+                                    <h5 class="card-title">(양주) 로그하우스</h5>
                                     <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 초벌 삼겹살이 아주 맛있고 사랑하는 강아지와 함께 먹으니 더욱 맛있네요! 다음에 또 오고 싶습니다ㅎㅎ</p>
-                                    <button class="mybtn" onclick=location.href="https://blog.naver.com/ddarumom/222866539269">들어가기</button>
+                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/ddarumom/222866539269'>들어가기</button>
                                 </div>
                             </div>
                         </div>
@@ -176,20 +193,20 @@
                                 <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTVfNjUg%2FMDAxNjY1ODEzNDE3OTM3.SQf2yTkicBlA8P7l1PxW4r31P48WIS1IyLvpBqqmICgg.l3OVWioYseLaJn0s_9K3y2XLbNOuMArZwaZXN7jY9NYg.JPEG.bonggurrr%2FIMG_9650.jpg&type=a340"
                                      class="card-img-top" alt="..." style="height: 250px">
                                 <div class="card-body">
-                                    <h5 class="card-title">농가의 식탁</h5>
+                                    <h5 class="card-title">(강화도) 농가의 식탁</h5>
                                     <p class="card-text">강화도에 있는 애견동반 식당~!! 마당도 너무 예쁘고 아이들이 뛰어놀기 좋네요!! 음식도 너무 맛있습니다.</p>
-                                    <button class="mybtn" onclick=location.href="https://blog.naver.com/bonggurrr/222902627522">들어가기</button>
+                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/bonggurrr/222902627522'>들어가기</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MjFfODcg%2FMDAxNjYxMDA5NTY3Mzk4.coVeOdLWJAQ7fPAgc2bacp6jcYvsl42snFBTjWhYC4cg.3cL7RE7_cSoT02f-j0OUyiiXSHVUsFFrwbzTI9__Tzsg.JPEG.bam2young2%2FIMG_7929.JPG&type=a340 "
+                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMjJfMTg1%2FMDAxNjY2NDQwNzk0ODU1.ijZwFXMGiTnuZlD7Y7cwtDHlzixlZUiEdelPNZf0QHwg.HSwDt8LJlR3qB8lTzAixvTL5amWGMf39cSlBtM9f7Q4g.JPEG.dahye940601%2FIMG_9067.jpg&type=a340"
                                      class="card-img-top" alt="..." style="height: 250px">
                                 <div class="card-body">
-                                    <h5 class="card-title">어반밸리</h5>
-                                    <p class="card-text">의정부에 위치한 강아지와 함께 갈 수 있는 식당! 좋은곳 발견했습니다^^!</p>
-                                    <button class="mybtn" onclick=location.href="https://blog.naver.com/bam2young2/222853717873">들어가기</button>
+                                    <h5 class="card-title">(의정부) 어반밸리</h5>
+                                    <p class="card-text">의정부에 위치한 강아지와 함께 갈 수 있는 식당! 좋은곳 발견했습니다^^! 음식도 너무 맛있네용 또 오고싶어요~!!</p>
+                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/bam2young2/222853717873'>들어가기</button>
                                 </div>
                             </div>
                         </div>
@@ -207,9 +224,9 @@
                                 <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MjFfMTE0%2FMDAxNjYxMDg1Mzg1Njgw.svcHJMm9T3GOISyYkfD4aZKuf9M1s4-jaiK2hoY-07Ig.wu14tNYy6hEztMtKHus6n4xFRT_cOOk870M1PygdY1wg.JPEG.mia0613%2FIMG_6588.jpg&type=a340 "
                                      class="card-img-top" alt="..." style="height: 250px">
                                 <div class="card-body">
-                                    <h5 class="card-title">기장 장안숲</h5>
+                                    <h5 class="card-title">(부산) 기장 장안숲</h5>
                                     <p class="card-text">기장 장안숲이라는 애견동반식당입니다! 숯불돼지 간장불고기가 맛있다고 소문나 있는데 정말 맛있네요!!</p>
-                                    <button class="mybtn" onclick=location.href="https://blog.naver.com/mia0613/222854893477">들어가기</button>
+                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/mia0613/222854893477'>들어가기</button>
                                 </div>
                             </div>
                         </div>
@@ -218,10 +235,10 @@
                                 <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTNfMjE4%2FMDAxNjY1NjUwMTg1NjM1.SVi5H-FQVGKVSQaIK8YfJQ1dtCm24iMrowigM1_Ll6cg.uW9ZCkqJmbndqmTR3MHwCOBEuzmrbOEIk396ZWkul8Ug.JPEG.dhpark9277%2Fcreamy_cream20_%25284%2529.jpg&type=a340 "
                                      class="card-img-top" alt="..." style="height: 250px">
                                 <div class="card-body">
-                                    <h5 class="card-title">고우다</h5>
+                                    <h5 class="card-title">(가평) 고우다</h5>
                                     <p class="card-text">강아지와 함께 맛있는 거 먹었어요! 가평 청평호에서 귀여운 강아지와 함께 즐거운 시간 보내세요! 주말에
                                         힐링하기 좋은 곳이네요</p>
-                                    <button class="mybtn" onclick=location.href="https://blog.naver.com/peton_place/222899450727">들어가기</button>
+                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/peton_place/222899450727'>들어가기</button>
                                 </div>
                             </div>
                         </div>
@@ -230,9 +247,9 @@
                                 <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDRfMTg5%2FMDAxNjU2ODk3MzYxODcx.TgcqRF_V9j08Th7HTjqljuNTFXl-W-wN59bAXtl7dgEg.8Epts832mssp2ki_MNXsn88sJhvgZdpfDKqp0UkUuy4g.JPEG.iiooiiaaa%2FIMG_8887.JPG&type=a340 "
                                      class="card-img-top" alt="..." style="height: 250px">
                                 <div class="card-body">
-                                    <h5 class="card-title">해안가</h5>
+                                    <h5 class="card-title">(영광) 해안가</h5>
                                     <p class="card-text">영광굴비를 강아지와 함께 즐길 수 있는 영광에 위치한 영광굴비집!! 영광에 오면 꼭 들러보세요!</p>
-                                    <button class="mybtn" onclick=location.href="https://blog.naver.com/iiooiiaaa/222799472887">들어가기</button>
+                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/iiooiiaaa/222799472887'>들어가기</button>
                                 </div>
                             </div>
                         </div>
@@ -260,12 +277,13 @@
 </div>
 
 
-    <div class="myteam">
-        <p><h8>제작자/ 최재하, 김세연. 이상정, 허정은</h8></p>
-        <p><h8>소속팀/ 항해99 10기 C반 7조</h8></p>
-        <p><h8>제작의의/ 반려동물과 함께 갈 수 있는 반려동물 동반장소에 대해 후기 및 정보들을 나누며 소통하기 위해 제작된 프로젝트입니다:)</h8></p>
-    </div>
 
+
+    <div class="myteam">
+        <h6>제작자/ 최재하, 김세연. 이상정, 허정은</h6>
+        <h6>소속팀/ 항해99 10기 C반 7조</h6>
+        <h6>제작 의의/ 반려동물과 함께 갈 수 있는 반려동물 동반장소에 대해 후기 및 정보들을 나누며 소통하기 위해 제작된 프로젝트입니다:)</h6>
+    </div>
 
 
 
