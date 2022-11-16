@@ -62,10 +62,12 @@
         * {
             font-family: 'Jua', sans-serif;
         }
-         a {
+
+        a {
             text-decoration: none;
             color: black;
         }
+
         .header {
             border: 3px solid red;
             height: 300px;
@@ -185,6 +187,53 @@
             font-size: 1.1em;
             margin-left: 660px;
         }
+
+        .comment {
+            border-top: 3px solid black;
+            text-align: left;
+            margin: 0 auto;
+            width: 1000px;
+            height: 300px;
+        }
+
+        .comment_post {
+            margin: 0 auto;
+            width: 1000px;
+            height: 150px;
+        }
+
+        .comment_post textarea {
+            width: 70%;
+            height: 7em;
+            font-size: 1.2em;
+            margin-left: 50px;
+            resize: none;
+        }
+
+        .comment_btn {
+            font-weight: bold;
+            display: inline-block;
+            background-color: white;
+            border-radius: 50px;
+            width: 95px;
+            height: 45px;
+            margin-top: 90px;
+            position: absolute;
+            font-size: 1.1em;
+            margin-left: 20px;
+
+        }
+
+        .comment_write {
+
+            padding-top: 15px;
+            margin-bottom: 3px;
+        }
+        .comment_list{
+            margin-left: 45px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -198,8 +247,28 @@
 </div>
 
 <div class="detail-box" id="detail-box">
+</div>
+<div class="comment">
+    <div class="comment_list">
+        <div class="comment_write">
+            재하
+        </div>
+        &nbsp; 댓글테스트
+    </div>
+
+    <div class="comment_list">
+        <div class="comment_write">
+            재하
+        </div>
+        &nbsp; 댓글테스트
+    </div>
 
 </div>
+<div class="comment_post">
+    <textarea></textarea>
+    <button class="comment_btn">작성</button>
+</div>
+
 
 <div class="sec5">
     <div class="under-bar">
