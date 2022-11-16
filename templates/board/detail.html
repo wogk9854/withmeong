@@ -11,6 +11,7 @@
             show_order();
         });
 
+
         function show_order() {
             $.ajax({
                 type: 'GET',
@@ -26,7 +27,7 @@
                     let num = response['num']
                     let img = response['img']
                     console.log(title)
-                    let temp_html = ` <div class="detail_img">
+                    let temp_html = `<div class="detail_img">
                                           <img src="/static/${img}">
                                       </div>
                                       <div class="board_info">
@@ -229,7 +230,8 @@
             padding-top: 15px;
             margin-bottom: 3px;
         }
-        .comment_list{
+
+        .comment_list {
             margin-left: 45px;
         }
 
@@ -247,6 +249,7 @@
 </div>
 
 <div class="detail-box" id="detail-box">
+
 </div>
 <div class="comment">
     <div class="comment_list">
@@ -260,12 +263,12 @@
         <div class="comment_write">
             재하
         </div>
-        &nbsp; 댓글테스트
+        &nbsp; test
     </div>
 
 </div>
 <div class="comment_post">
-    <textarea></textarea>
+    <textarea placeholder="댓글작성" type="text" id="comment"></textarea>
     <button class="comment_btn">작성</button>
 </div>
 
