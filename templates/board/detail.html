@@ -41,7 +41,7 @@
                                         <input type="hidden" id="numtest" class="numtest" value="${num}">
 
                                       </div>
-                                        <button class="list-btn"><a href="/">글목록</a></button>
+                                        <button class="list-btn"><a href="/board">글목록</a></button>
                                         <button class="delete-btn" type="button" onclick="number(${num})">게시글삭제</button>`
                     $('#detail-box').append(temp_html)
 
@@ -59,7 +59,7 @@
                 data: {comment_give: comment, num_give: num},
                 success: function (response) {
                     alert("댓글작성")
-                    location.replace("/")
+                    window.location.reload()
                 }
             });
         }
@@ -71,7 +71,7 @@
                 data: {num_give: num},
                 success: function (response) {
                     alert("삭제완료")
-                    location.replace("/")
+                    location.replace("/board")
                 }
             });
         }

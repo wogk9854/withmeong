@@ -8,6 +8,10 @@
     <title></title>
 
     <script>
+        $(document).ready(function () {
+            get_nickname();
+        });
+
         function save_order() {
             let title = $('#title').val();
             let write = $('#write').val();
@@ -19,7 +23,23 @@
                 data: {title_give: title, write_give: write, content_give: content},
                 success: function (response) {
                     alert(response['msg'])
-                    location.replace("/")
+                    location.replace("/board")
+                }
+            });
+        }
+
+        function get_nickname() {
+            $.ajax({
+                type: 'GET',
+                url: '/api/nick',
+                data: {},
+                success: function (response) {
+                    let nickname = response['nickname']
+                    document.getElementById("write").value = nickname;
+
+                    console.log(response)
+                    console.log(nickname)
+
                 }
             });
         }
@@ -257,14 +277,14 @@
         <div class="sec1-btn">
             </button>
             <div class="sec1-btns">
-                <button class="log-btn" onclick=location.href='로그인페이지'>로그인</button>
-                <button class="join-btn" onclick=location.href='회원가입페이지'>회원가입</button>
+                <button class="log-btn" onclick=location.href='/login'>로그인</button>
+                <button class="join-btn" onclick=location.href='/register'>회원가입</button>
             </div>
         </div>
     </div>
     <ul class="category">
         <li><a href="/board">🐶 자유게시판</a></li>
-        <li><a href="/place">🐾 반려동물 동반장소</a></li>
+        <li><a href="/restaurant">🐾 반려동물 동반장소</a></li>
     </ul>
 </div>
 <div class="community">
@@ -275,7 +295,7 @@
 <div class="post">
     <div class="info">
         <input placeholder="제목" type="text" id="title">
-        <input placeholder="작성자" type="text" id="write"><br>
+        <input placeholder="작성자" type="text" id="write" value="" readonly><br>
         <textarea placeholder="내용" type="text" id="content"></textarea>
     </div>
     <div class="upload-box">
