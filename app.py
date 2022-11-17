@@ -26,10 +26,10 @@ def ho():
     return render_template('board/board.html')
 @app.route('/restaurant')
 def restaurant():
-    return render_template('with.html')
+    return render_template('with2.html')
 @app.route('/cafe')
 def cafe():
-    return render_template('with2.html')
+    return render_template('with.html')
 @app.route('/pension')
 def pension():
     return render_template('with3.html')
@@ -263,8 +263,9 @@ def api_login():
             'id': id_receive,
             'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=20)
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
 
+        print(token)
         return jsonify({'result': 'success', 'token': token})
     else:
         return jsonify({'result': 'fail', 'msg': '유효한 계정이 아닙니다.'})
@@ -296,4 +297,4 @@ def api_valid():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=4000, debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)
