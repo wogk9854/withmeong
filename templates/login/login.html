@@ -23,9 +23,9 @@
 
 
     <script>
-        {% if msg %}
-            alert("{{ msg }}")
-        {% endif %}
+        //{% if msg %}
+            //alert("{{ msg }}")
+        //{% endif %}
         function login() {
             $.ajax({
                 type: "POST",
@@ -164,12 +164,6 @@
         <div class="form-floating">
             <input type="password" class="form-control" id="login_pw" placeholder="Password">
             <label>패스워드를 입력하세요</label>
-            <div class="check_box">
-                  <span class="input-wrap">
-                    <input type="checkbox" id="checkId" name="checkId">
-                    <label for="checkId">아이디 저장</label>
-                  </span>
-            </div>
         </div>
         <hr>
         <div class="d-grid gap-2">
