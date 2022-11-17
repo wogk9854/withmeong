@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-              integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-              crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
     <title>위드멍::반려동물 동반#카페</title>
 
@@ -26,6 +26,10 @@
             color: #5f85e5;
         }
 
+        .title_img {
+            cursor: pointer;
+        }
+
         .mytitle {
             color: #5f85e5;
             height: 100px;
@@ -37,15 +41,18 @@
             justify-content: center;
             align-items: center;
         }
+
         .mylog {
             margin: 0px 0px 10px 1100px;
         }
+
         .log-btn {
             width: 100px;
             border-radius: 50px;
             background-color: transparent;
             cursor: pointer
         }
+
         .join-btn {
             width: 100px;
             margin-top: 3px;
@@ -53,39 +60,45 @@
             background-color: transparent;
             cursor: pointer;
         }
+
         .join-btn:hover {
             color: #31c0ff;
             border: 2px solid #31c0ff;
         }
+
         .log-btn:hover {
             color: #31c0ff;
             border: 2px solid #31c0ff;
         }
+
         .myimg {
 
             height: 320px;
             width: 100%;
             background-size: cover;
             background: url("https://media.istockphoto.com/id/1125615731/ko/%EB%B2%A1%ED%84%B0/%EB%B2%A1%ED%84%B0-%EB%82%99%EC%84%9C-%EC%8A%A4%EB%AC%B4%EB%94%94-%ED%8C%A8%ED%84%B4-%EB%98%90%EB%8A%94-%EB%B0%B0%EA%B2%BD-%EA%B7%B8%EB%A6%BC.jpg?s=612x612&w=0&k=20&c=BNmZ8-uoCvutCUKvvNiwNCHTIN91-UYy73Dhg3TPh68=") center center;
-                        / 100 % no-repeat;
-            }
+        / 100 % no-repeat;
+        }
+
         .myca {
             max-height: 1000px;
             height: 95%;
             margin: 100px 250px 0px 250px;
-            }
+        }
 
         .myloc {
             color: #5f85e5;
             margin-left: 250px;
             font-family: 'Gowun Dodum', sans-serif;
         }
-        .card{
+
+        .card {
             min-height: 200px;
             border: 2px solid black;
             width: 100%;
             height: 500px;
         }
+
         .inbtn {
             background-color: transparent;
             color: black;
@@ -134,6 +147,7 @@
         .carousel-indicators {
             margin-bottom: -20px;
         }
+
         .allback {
             background-color: #f5f5f5;
         }
@@ -144,14 +158,18 @@
 
 <body>
 <div class="allback">
-     <div class = "mytitle" onclick=location.href='/'>
-        <h1><img src="https://cdn.discordapp.com/attachments/1036843116294053911/1042336647490043935/f617b6aac5a7248d.png"></h1>
+    <div class="mytitle" onclick=location.href='/'>
+        <div class="title_img">
+            <h1><img
+                    src="https://cdn.discordapp.com/attachments/1036843116294053911/1042336647490043935/f617b6aac5a7248d.png">
+            </h1>
+        </div>
     </div>
     <div class="mylog">
         <button class="log-btn" onclick=location.href='/login'>로그인</button>
         <button class="join-btn" onclick=location.href='/register'>회원가입</button>
     </div>
-    <div class = "myimg">
+    <div class="myimg">
     </div>
     <div class="myloc">
         <h8>메인페이지 > #카페 <a href="/restaurant">#식당</a> <a href="/pension">#숙소</a></h8>
@@ -168,88 +186,107 @@
             </div>
             <div class="pics">
                 <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMjdfMjcg%2FMDAxNjY2ODYyNDEyMjAz.fdF7VEamtNQsjIDI7pne-vQQH3F52NpLKqLlFqH_pdog.BrgV4RC3WNjmhHfYFXakeLGoSaum9Fdr37Pl1Vxu0CUg.JPEG.se_h530%2FIMG_9455.JPG&type=a340"
-                                 class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">(일산) 24 inch</h5>
-                                    <p class="card-text">일산에 위치한 애견동반 카페입니다! 애견입장료가 없는게 장점이네요. 사진찍기도 아주 좋고 샐러드 맛집입니다^^</p>
-                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/se_h530/222912717441'>들어가기</button>
+                    <div class="carousel-item active">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMjdfMjcg%2FMDAxNjY2ODYyNDEyMjAz.fdF7VEamtNQsjIDI7pne-vQQH3F52NpLKqLlFqH_pdog.BrgV4RC3WNjmhHfYFXakeLGoSaum9Fdr37Pl1Vxu0CUg.JPEG.se_h530%2FIMG_9455.JPG&type=a340"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(일산) 24 inch</h5>
+                                        <p class="card-text">일산에 위치한 애견동반 카페입니다! 애견입장료가 없는게 장점이네요. 사진찍기도 아주 좋고 샐러드
+                                            맛집입니다^^</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/se_h530/222912717441'>들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MTBfMjY0%2FMDAxNjU3MzgwOTM0MTE2.ZQwaW1E7ewpQnPqP4Fl-Q2d_lI24ojYL-rXsJq6F2kog.oThkKmcIm8b7XdAGFW_BDfJXUd2HzRnZZdETFoLncyIg.JPEG.mulanhua94%2FIMG_2203.jpg&type=a340 "
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(삼척) 고우다</h5>
+                                        <p class="card-text">삼척에 위치한 한옥으로 된 애견동반카페! 한옥에 강아지와 함께 갈 수 있다니ㅎㅎ 색다른 경험이네용</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/mulanhua94/222806108709'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMjNfMTQg%2FMDAxNjY2NDkwMDI0ODgz.oc1UYiHXCP-mGpmHvHK_0CwJm5sa88t4o631EPIcC9Ig.YP4v0k5t-U-yKS0vp-4fXML5Grfnyche_Lyo---tE4Ag.JPEG.songmi0105%2F688111156.317939.jpg&type=a340 "
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(정읍) 카페 베르데</h5>
+                                        <p class="card-text">2층의 유리로 된 건물이 너무 예뻐요! 뒤에 정원이 있는데 강아지랑 산책하기 너무 좋네요!!ㅎㅎㅎ</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/songmi0105/222908047143'>
+                                            들어가기
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MTBfMjY0%2FMDAxNjU3MzgwOTM0MTE2.ZQwaW1E7ewpQnPqP4Fl-Q2d_lI24ojYL-rXsJq6F2kog.oThkKmcIm8b7XdAGFW_BDfJXUd2HzRnZZdETFoLncyIg.JPEG.mulanhua94%2FIMG_2203.jpg&type=a340 "
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">(삼척) 고우다</h5>
-                                    <p class="card-text">삼척에 위치한 한옥으로 된 애견동반카페! 한옥에 강아지와 함께 갈 수 있다니ㅎㅎ 색다른 경험이네용</p>
-                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/mulanhua94/222806108709'>들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMjNfMTQg%2FMDAxNjY2NDkwMDI0ODgz.oc1UYiHXCP-mGpmHvHK_0CwJm5sa88t4o631EPIcC9Ig.YP4v0k5t-U-yKS0vp-4fXML5Grfnyche_Lyo---tE4Ag.JPEG.songmi0105%2F688111156.317939.jpg&type=a340 "
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">(정읍) 카페 베르데</h5>
-                                    <p class="card-text">2층의 유리로 된 건물이 너무 예뻐요! 뒤에 정원이 있는데 강아지랑 산책하기 너무 좋네요!!ㅎㅎㅎ</p>
-                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/songmi0105/222908047143'>들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-
-
-                </div>
-                <div class="carousel-item">
-
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card">
-                                <img src=" https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTBfMTQ5%2FMDAxNjY1MzkzMzI2OTQ5.bvhERCTrLVIuCD1Ljqw6cL3ZolVGfiFnPaYpg5-OVc8g.F9YnWicWhT0I3beZFbT1F0FI2GzJFkeq5iSxT9gMjXkg.JPEG.01067480823%2FIMG_3293.jpg&type=a340   "
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">(인천) 잘 어울리개</h5>
-                                    <p class="card-text">인천에 가볼만한 애견동반카페!! 평일에는 애견유치원, 주말에는 카페를 운영해서 다른 강아지들과 즐겁게 놀 수 있어요!</p>
-                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/01067480823/222896628937'>들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MTRfMTA3%2FMDAxNjYwNDcyMTcxMTA4.isELnXiiqmDi01BYpIEHqkNfoTn5k2RTA0VvF8YDxGgg._Bk4wLt-5F5WfU_bEVc-lE_7y6Wo-OhufBlT7EDg4tgg.JPEG.01046407941%2FIMG_8252.jpg&type=a340"
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">(대부도) 늘포레</h5>
-                                    <p class="card-text">대부도에 있는 애견동반카페~ 인테리어 정말 예쁘고 특히 케이크 디저트류가 정말 예뻐요!! 재미있게 놀다왔어요~~</p>
-                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/01046407941/222859227424'>들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MzFfNSAg%2FMDAxNjYxOTMyNDU2NTA3.c_L80mqi52GKVzI6uCehSnwqVzT2tSbG4Mw014W9yyYg.1eKLlSiW_fyy7a7Ey_uMyqVAJwkhGVaqKonjUzm2LS8g.JPEG.1992choi%2FIMG_7030.jpg&type=a340"
-                                     class="card-img-top" alt="..." style="height: 250px">
-                                <div class="card-body">
-                                    <h5 class="card-title">(동탄) 카페 실리</h5>
-                                    <p class="card-text">동탄에 놀러갔다가 애견동반카페 들렀어요!! 디저트 맛집이라고 소문나있대요ㅎㅎ 인테리어도 예뻐요!!</p>
-                                    <button class="inbtn" onclick=location.href='https://blog.naver.com/1992choi/222863169418'>들어가기</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-caption d-none d-md-block">
 
                     </div>
-                </div>
+                    <div class="carousel-item">
+
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <div class="card">
+                                    <img src=" https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMTBfMTQ5%2FMDAxNjY1MzkzMzI2OTQ5.bvhERCTrLVIuCD1Ljqw6cL3ZolVGfiFnPaYpg5-OVc8g.F9YnWicWhT0I3beZFbT1F0FI2GzJFkeq5iSxT9gMjXkg.JPEG.01067480823%2FIMG_3293.jpg&type=a340   "
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(인천) 잘 어울리개</h5>
+                                        <p class="card-text">인천에 가볼만한 애견동반카페!! 평일에는 애견유치원, 주말에는 카페를 운영해서 다른 강아지들과 즐겁게 놀
+                                            수 있어요!</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/01067480823/222896628937'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MTRfMTA3%2FMDAxNjYwNDcyMTcxMTA4.isELnXiiqmDi01BYpIEHqkNfoTn5k2RTA0VvF8YDxGgg._Bk4wLt-5F5WfU_bEVc-lE_7y6Wo-OhufBlT7EDg4tgg.JPEG.01046407941%2FIMG_8252.jpg&type=a340"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(대부도) 늘포레</h5>
+                                        <p class="card-text">대부도에 있는 애견동반카페~ 인테리어 정말 예쁘고 특히 케이크 디저트류가 정말 예뻐요!! 재미있게
+                                            놀다왔어요~~</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/01046407941/222859227424'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MzFfNSAg%2FMDAxNjYxOTMyNDU2NTA3.c_L80mqi52GKVzI6uCehSnwqVzT2tSbG4Mw014W9yyYg.1eKLlSiW_fyy7a7Ey_uMyqVAJwkhGVaqKonjUzm2LS8g.JPEG.1992choi%2FIMG_7030.jpg&type=a340"
+                                         class="card-img-top" alt="..." style="height: 250px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">(동탄) 카페 실리</h5>
+                                        <p class="card-text">동탄에 놀러갔다가 애견동반카페 들렀어요!! 디저트 맛집이라고 소문나있대요ㅎㅎ 인테리어도 예뻐요!!</p>
+                                        <button class="inbtn"
+                                                onclick=location.href='https://blog.naver.com/1992choi/222863169418'>
+                                            들어가기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -269,16 +306,11 @@
 </div>
 
 
-
-    <div class="myteam">
-        <h5>제작자/ 최재하, 김세연. 이상정, 허정은</h5>
-        <h5>소속팀/ 항해99 10기 C반 7조</h5>
-        <h5>제작의의/ 반려동물과 함께 갈 수 있는 반려동물 동반장소에 대해 후기 및 정보들을 나누며 소통하기 위해 제작된 프로젝트입니다:)</h5>
-    </div>
-
-
-
-
+<div class="myteam">
+    <h5>제작자/ 최재하, 김세연. 이상정, 허정은</h5>
+    <h5>소속팀/ 항해99 10기 C반 7조</h5>
+    <h5>제작의의/ 반려동물과 함께 갈 수 있는 반려동물 동반장소에 대해 후기 및 정보들을 나누며 소통하기 위해 제작된 프로젝트입니다:)</h5>
+</div>
 
 
 </body>
