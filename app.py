@@ -38,6 +38,14 @@ def pension():
 def test():
     return render_template('nickname.html')
 
+@app.route('/findid')
+def findid():
+    return render_template('login/findid.html')
+@app.route('/findpw')
+def findpw():
+    return render_template('login/findpw.html')
+
+
 
 
 
