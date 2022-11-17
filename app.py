@@ -37,7 +37,6 @@ def pension():
 
 
 
-
 @app.route('/write')
 def main():
     return render_template('board/write.html')
@@ -230,11 +229,8 @@ def api_find_pw():
 @app.route('/api/repw', methods=['POST'])
 def api_re_pw():
     re_email = request.form['re_email_give']
-    re_pw = request.form['re_email.give']
-
-    print(re_email, re_pw)
+    re_pw = request.form['re_pw_give']
     repw_hash = hashlib.sha256(re_pw.encode('utf-8')).hexdigest()
-
     db.withmeong.update_one({'id': re_email}, {'$set': {'pw': repw_hash}})
 
     return jsonify({'result': 'success'})

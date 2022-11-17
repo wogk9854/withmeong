@@ -36,20 +36,19 @@
                     data: {findid_nick_give: $('#find_nickName').val(), findid_pw_give: $('#find_pw').val()},
                     success: function (response) {
                         console.log(response)
-                        if (response[0]['result'] == 'success') {
-                            console.log('abc')
-                            let find_id = response[1]['result_id']
-                            console.log(find_id)
+                        if (response['result'] == 'success') {
+                            let find_id = response['result_id']
                             alert('당신의 아이디는 " ' + find_id + ' " 입니다!')
                             window.location.href = '/login'
-                            alert("떠")
-                        } else {
+                        }
+                        console.log(response)
+                        if(response['result'] == 'fail') {
+                            alert("유효한 계정이 없습니다.")
                             window.location.href = '/login'
                         }
                     }
                 })
             }
-
 
         </script>
         <style>
