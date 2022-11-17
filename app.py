@@ -135,14 +135,11 @@ def board_delete():
 def board_commnet():
     comment = request.form['comment_give']
     num = request.form['num_give']
-    print(comment)
-    print(num)
-    write = '재하11'
+    write = request.form['comment_write']
     doc = {
         'comment':comment,
         'boardnum':num,
         'write':write
-
     }
     db.comment.insert_one(doc)
 
@@ -261,7 +258,7 @@ def api_login():
 
         payload = {
             'id': id_receive,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=20)
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=20000000)
         }
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 

@@ -10,9 +10,25 @@
         $(document).ready(function () {
             show_order();
             comment_list();
+            get_nickname();
 
         });
+        let comment_write
+        function get_nickname() {
+            $.ajax({
+                type: 'GET',
+                url: '/api/nick',
+                data: {},
+                success: function (response) {
+                    let nickname = response['nickname']
+                    document.getElementById("comment_write").value = nickname;
+                    comment_write = nickname
+                    console.log(response)
+                    console.log(nickname)
 
+                }
+            });
+        }
 
         function show_order() {
             $.ajax({
@@ -29,6 +45,7 @@
                     let num = response['num']
                     let img = response['img']
                     console.log(title)
+
                     let temp_html = `<div class="detail_img">
                                           <img src="/static/${img}">
                                       </div>
@@ -39,7 +56,6 @@
                                         </div><br>
                                         글내용 :${content}<br>
                                         <input type="hidden" id="numtest" class="numtest" value="${num}">
-
                                       </div>
                                         <button class="list-btn"><a href="/board">글목록</a></button>
                                         <button class="delete-btn" type="button" onclick="number(${num})">게시글삭제</button>`
@@ -56,8 +72,9 @@
             $.ajax({
                 type: 'POST',
                 url: '/board/comment',
-                data: {comment_give: comment, num_give: num},
+                data: {comment_give: comment, num_give: num, comment_write: comment_write},
                 success: function (response) {
+                    console.log(comment_write)
                     alert("댓글작성")
                     window.location.reload()
                 }
@@ -363,6 +380,7 @@
 </head>
 <body>
 <div class="header">
+
     <div class="sec1">
         <h1 class="main-txt">
             <a href="/"><img
@@ -375,12 +393,13 @@
         </div>
     </div>
     <ul class="category">
-        <li><a href="/board">🐶 자유게시판</a></li>
+        <li><a href="/board">🐶 커뮤니티</a></li>
         <li><a href="/restaurant">🐾 반려동물 동반장소</a></li>
     </ul>
 </div>
 <div class="community">
     <h2>커뮤니티</h2>
+    <input id="comment_write" class="comment_write" type="text" value="">
     <div class="community_img">
     </div>
 </div>
@@ -393,6 +412,7 @@
 
 </div>
 <div class="comment_post">
+
     <textarea placeholder="댓글작성" type="text" id="comment"></textarea>
     <button class="comment_btn" type="button" onclick="save_comment()">작성</button>
 
