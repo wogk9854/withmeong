@@ -34,6 +34,10 @@ def cafe():
 def pension():
     return render_template('with3.html')
 
+@app.route('/test')
+def test():
+    return render_template('nickname.html')
+
 
 
 
@@ -218,6 +222,7 @@ def api_find_pw():
     findpw_nick_receive = request.form['findpw_nick_give']
 
     print(findpw_email_receive, findpw_nick_receive)
+
     if db.withmeong.find_one({'id': findpw_email_receive, 'nick': findpw_nick_receive}):
         user = db.withmeong.find_one({'id': findpw_email_receive, 'nick': findpw_nick_receive})
         user_id = user['id']
@@ -271,6 +276,7 @@ def api_valid():
         print(payload)
 
         userinfo = db.withmeong.find_one({'id': payload['id']}, {'_id': 0})
+        print(userinfo)
         return jsonify({'result': 'success', 'nickname': userinfo['nick']})
     except jwt.ExpiredSignatureError:
         return jsonify({'result': 'fail', 'msg': '로그인 시간이 만료되었습니다.'})
