@@ -11,6 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <style>
         * {
             font-family: 'Jua', sans-serif;
@@ -31,7 +35,8 @@
             border-bottom: 3px solid black;
             text-align: left;
             margin: 0 auto;
-            width: 1600px;
+            max-width: 1600px;
+            width: 95%;
             height: 300px;
         }
 
@@ -82,7 +87,8 @@
         }
 
         .board_table {
-            width: 1600px;
+            max-width: 1600px;
+            width: 95%;
             height: 1000px;
             text-align: center;
             margin: 0 auto;
@@ -195,6 +201,8 @@
     <script>
         $(document).ready(function () {
             board_list();
+            get_nickname();
+            $('#logout').hide();
         });
 
         function board_list() {
@@ -234,6 +242,34 @@
             });
         }
 
+        function logout() {
+            alert('로그아웃!')
+            $.removeCookie('mytoken');
+
+            window.location.href = '/login'
+        }
+
+        function get_nickname() {
+            $.ajax({
+                type: 'GET',
+                url: '/api/nick',
+                data: {},
+                success: function (response) {
+                    let result = response['result']
+                    console.log(response)
+                    console.log(result)
+                    if (result == 'fail') {
+
+                    } else {
+                        $('#login').hide()
+                        $('#join').hide()
+                        $('#logout').show()
+                    }
+
+
+                }
+            });
+        }
 
     </script>
 
@@ -247,15 +283,16 @@
         <!--<img src="https://cdn.discordapp.com/attachments/1034445975529472050/1041719103028727889/dnlemajd.png">-->
         <div class="sec1-btn">
             </button>
-            <div class="sec1-btns">
-                <button class="log-btn" onclick=location.href='로그인페이지'>로그인</button>
-                <button class="join-btn" onclick=location.href='회원가입페이지'>회원가입</button>
+            <div class="sec1-btns" id="plus">
+                <button class="log-btn" onclick=location.href='/loginpage' id="login">로그인</button>
+                <button class="join-btn" onclick=location.href='/register' id="join">회원가입</button>
+                <button class="log-btn" onclick="logout()" id="logout">로그아웃</button>
             </div>
         </div>
     </div>
     <ul class="category">
         <li><a href="/board">🐶 자유게시판</a></li>
-        <li><a href="/place">🐾 반려동물 동반장소</a></li>
+        <li><a href="/restaurant">🐾 반려동물 동반장소</a></li>
     </ul>
 </div>
 <div class="community">

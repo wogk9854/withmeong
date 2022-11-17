@@ -6,6 +6,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
 
     <style>
         * {
@@ -222,6 +231,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            margin-top: 20px;
         }
 
         .search-bar {
@@ -388,6 +398,43 @@
         }
 
     </style>
+
+    <script>
+        $(document).ready(function () {
+            get_nickname();
+            $('#logout').hide();
+        });
+
+        function logout() {
+            alert('로그아웃!')
+            $.removeCookie('mytoken');
+
+            window.location.href = '/login'
+        }
+
+        function get_nickname() {
+            $.ajax({
+                type: 'GET',
+                url: '/api/nick',
+                data: {},
+                success: function (response) {
+                    let result = response['result']
+                    console.log(response)
+                    console.log(result)
+                    if (result == 'fail') {
+
+                    } else {
+                        $('#login').hide()
+                        $('#join').hide()
+                        $('#logout').show()
+                    }
+
+
+                }
+            });
+        }
+    </script>
+
 </head>
 <body>
 <div class="sec1">
@@ -398,8 +445,14 @@
     <div class="sec1-btn">
         </button>
         <div class="sec1-btns">
-            <button class="log-btn" onclick=location.href='/login'>로그인</button>
-            <button class="join-btn" onclick=location.href='/register'>회원가입</button>
+            <div class="sec1-btn">
+                </button>
+                <div class="sec1-btns" id="plus">
+                    <button class="log-btn" onclick=location.href='/loginpage' id="login">로그인</button>
+                    <button class="join-btn" onclick=location.href='/register' id="join">회원가입</button>
+                    <button class="log-btn" onclick="logout()" id="logout">로그아웃</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -489,10 +542,7 @@
         </div>
     </footer>-->
 </div>
-<div class="search-space">
-    <input class="form-control search-bar" type="search"
-           placeholder="🔍 우리 반려동물과 가고 싶은 곳"/>
-</div>
+
 <div class="sec3">
     <div class="sec3-btns">
         <button class="btn-1" onclick=location.href='/restaurant'>#식당</button>

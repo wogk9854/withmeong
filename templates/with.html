@@ -11,6 +11,10 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
 
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
     <title>위드멍::반려동물 동반#카페</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
@@ -154,6 +158,42 @@
 
 
     </style>
+    <script>
+        $(document).ready(function () {
+            get_nickname();
+            $('#logout').hide();
+        });
+
+        function logout() {
+            alert('로그아웃!')
+            $.removeCookie('mytoken');
+
+            window.location.href = '/login'
+        }
+
+        function get_nickname() {
+            $.ajax({
+                type: 'GET',
+                url: '/api/nick',
+                data: {},
+                success: function (response) {
+                    let result = response['result']
+                    console.log(response)
+                    console.log(result)
+                    if (result == 'fail') {
+
+                    } else {
+                        $('#login').hide()
+                        $('#join').hide()
+                        $('#logout').show()
+                    }
+
+
+                }
+            });
+        }
+    </script>
+
 </head>
 
 <body>
@@ -166,8 +206,9 @@
         </div>
     </div>
     <div class="mylog">
-        <button class="log-btn" onclick=location.href='/login'>로그인</button>
-        <button class="join-btn" onclick=location.href='/register'>회원가입</button>
+        <button class="log-btn" onclick=location.href='/login' id="login">로그인</button>
+        <button class="join-btn" onclick=location.href='/register' id="join">회원가입</button>
+        <button class="join-btn" onclick="logout()" id="logout">로그아웃</button>
     </div>
     <div class="myimg">
     </div>

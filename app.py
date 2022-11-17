@@ -263,7 +263,7 @@ def api_login():
             'id': id_receive,
             'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=20)
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
         print(token)
         return jsonify({'result': 'success', 'token': token})
