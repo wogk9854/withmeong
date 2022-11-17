@@ -21,6 +21,7 @@
 
 
         <script>
+            $('#re_pw').hide()
             {% if msg %}
                 alert("{{ msg }}")
             {% endif %}
@@ -37,11 +38,13 @@
                     success: function (response) {
                         console.log(response)
                         if (response['result'] == 'success') {
-                            console.log('abc')
                             $('#login_box').hide()
                             $('#repw_box').show()
-                            user_email = response['user_id']
-                            $('#hide_email').val(user_email)
+                            user_email = response['result_id']
+                            let temp_html = `<h3>${user_email}</h3>
+<input type="hidden" id="repw_email">`
+                            $('#use_email').append(temp_html)
+                            $('#repw_email').val(user_email)
                         } else {
                             alert("정확하게 입력해주세요.")
                         }
@@ -50,10 +53,11 @@
             }
 
             function re_pw() {
+                let re_email = $('#repw_email').val()
                 $.ajax({
                     type: "POST",
                     url: "/api/repw",
-                    data: {re_email_give: $('#hide_email').val(), re_pw_give: $('#re_pw')},
+                    data: {re_email_give: re_email, re_pw_give: $('#re_pw').val()},
                     success: function (response) {
                         if (response['result'] == 'success') {
                             alert("성공적으로 비밀번호가 변경되었습니다.")
@@ -125,6 +129,7 @@
                 padding: 20px;
                 text-align: center;
 
+
             }
             .repw_box {
                 width: 400px;
@@ -158,10 +163,10 @@
                 margin-top: 20px;
             }
             .hide_email {
-                display: none;
+                /*display: none;*/
             }
             .repw_box {
-                /*display: none;*/
+                display: none;
             }
 
 
@@ -204,8 +209,8 @@
 
             </div>
         </div>
-        <div class="repw_box">
-            <div class="hide_email" id="hide_email"></div>
+        <div class="repw_box" id="repw_box">
+            <div class="hide_email" id="use_email"></div>
             <h1>새로운 비밀번호?</h1>
             <div class="form-floating">
                 <input type="password" class="form-control" id="re_pw">
